@@ -16,8 +16,6 @@ const betnaijaRoute = (req, res) => {
   rp(options)
     .then(async (data) => {
       await getMatchesOdds(data);
-    })
-    .then(() => {
       try {
         return res.status(200).json({ length: matches.length, Matches: matches });
       } catch (error) {
