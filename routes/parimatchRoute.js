@@ -2,10 +2,10 @@ import rp from "request-promise";
 import { load } from "cheerio";
 
 const parimatchURL =
-  "https://parimatch.ng/paginated-events/football/prematch?pageNumber=1";
+  "https://parimatch.ng/football/upcoming/1";
 
 const parimatchURL2 =
-  "https://parimatch.ng/paginated-events/football/prematch?pageNumber=2";
+  "https://parimatch.ng/football/upcoming/2";
 
 const options = {
   url: parimatchURL,
