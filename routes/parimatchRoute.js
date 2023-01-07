@@ -1,14 +1,23 @@
 import rp from "request-promise";
 import { load } from "cheerio";
 
-const parimatchURL =
-  "https://parimatch.ng/football/upcoming/1";
+// URL'S
 
-const parimatchURL2 =
-  "https://parimatch.ng/football/upcoming/2";
+const parimatchURL1 = "https://parimatch.ng/football/upcoming/1";
 
-const options = {
-  url: parimatchURL,
+const parimatchURL2 = "https://parimatch.ng/football/upcoming/2";
+
+const parimatchURL3 = "https://parimatch.ng/football/upcoming/3";
+
+const parimatchURL4 = "https://parimatch.ng/football/upcoming/4";
+
+const parimatchURL5 = "https://parimatch.ng/football/upcoming/4";
+
+
+// rp options
+
+const options1 = {
+  url: parimatchURL1,
   transform: (body) => load(body),
 };
 
@@ -17,30 +26,89 @@ const options2 = {
   transform: (body) => load(body),
 };
 
+const options3 = {
+  url: parimatchURL3,
+  transform: (body) => load(body),
+};
+
+const options4 = {
+  url: parimatchURL4,
+  transform: (body) => load(body),
+};
+
+const options5 = {
+  url: parimatchURL5,
+  transform: (body) => load(body),
+};
+
+
+// store all scraped matches
+
 let allMatches = [];
 
+
+// functions
+
 const parimatchRoute = (req, res) => {
-  rp(options)
+  rp(options1)
     .then(async ($) => {
       await getMatchesOdds($);
     })
     .catch((err) => {
-      return res.status(500).json({"Error sending results from parimatch": err });
+      return res
+        .status(500)
+        .json({ "Error sending results from parimatch": err });
     });
 
   rp(options2)
     .then(async ($) => {
       await getMatchesOdds($);
     })
-    .catch((err) => {      
-      return res.status(500).json({"Error sending results from parimatch": err });
+    .catch((err) => {
+      return res
+        .status(500)
+        .json({ "Error sending results from parimatch": err });
+    });
+
+  rp(options3)
+    .then(async ($) => {
+      await getMatchesOdds($);
+    })
+    .catch((err) => {
+      return res
+        .status(500)
+        .json({ "Error sending results from parimatch": err });
+    });
+
+  rp(options4)
+    .then(async ($) => {
+      await getMatchesOdds($);
+    })
+    .catch((err) => {
+      return res
+        .status(500)
+        .json({ "Error sending results from parimatch": err });
+    });
+
+  rp(options5)
+    .then(async ($) => {
+      await getMatchesOdds($);
+    })
+    .catch((err) => {
+      return res
+        .status(500)
+        .json({ "Error sending results from parimatch": err });
     });
 
   if (allMatches[0]) {
     try {
-      return res.status(200).json({ length: allMatches.length, Matches: allMatches });
+      return res
+        .status(200)
+        .json({ length: allMatches.length, Matches: allMatches });
     } catch (error) {
-      return res.status(500).json({"Error sending results from parimatch": error });
+      return res
+        .status(500)
+        .json({ "Error sending results from parimatch": error });
     }
   }
 };
