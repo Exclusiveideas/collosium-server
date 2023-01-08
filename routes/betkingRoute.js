@@ -4,6 +4,8 @@ import rp from "request-promise";
 const betkingRoute = (req, res) => {
   const { team1, team2} = req?.query;
 
+  if(!team1 || !team2) return res.status(400).json("Incomplet query parameters");
+
   let firstThird = (team1?.slice(0, 3)).toLowerCase();
 
   const teams = {
