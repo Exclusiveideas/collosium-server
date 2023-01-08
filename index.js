@@ -5,6 +5,7 @@ import betwayRoute from "./routes/betwayRoute.js";
 import parimatchRoute from "./routes/parimatchRoute.js";
 import betnaijaRoute from "./routes/betnaijaRoute.js";
 import betkingRoute from "./routes/betkingRoute.js";
+import sportybetRoute from "./routes/sportybetRoute.js";
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.get("/api/onexbet", onexbetRoute);
 app.get("/api/betway", betwayRoute);
 app.get("/api/parimatch", parimatchRoute);
 app.get("/api/betking", betkingRoute);
-app.get("/api/betnaija", betnaijaRoute);
+app.get("/api/sportybet", sportybetRoute);
+// app.get("/api/betnaija", betnaijaRoute);
 
 const PORT = process.env.PORT || 5000;
 

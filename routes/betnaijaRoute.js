@@ -19,11 +19,11 @@ const betnaijaRoute = (req, res) => {
       try {
         return res.status(200).json({ length: matches.length, Matches: matches });
       } catch (error) {
-        return res.status(500).json({"Error sending results from betnaija": error });
+        return res.status(500).json({"Error fetching results from betnaija": error });
       }
     })
     .catch((err) => {
-      return res.status(500).json({"Error sending results from betnaija": err });
+      return res.status(500).json({"Error fetching results from betnaija": err });
     });
 };
 

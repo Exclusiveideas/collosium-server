@@ -12,7 +12,7 @@ const betwayRoute = (req, res) => {
   rp(options)
     .then(async ($) => await getMatchesOdds($, res))
     .catch((err) => {
-      return res.status(500).json({"Error sending results from betway": err });
+      return res.status(500).json({"Error fetching results from betway": err });
     });
 };
 
@@ -55,7 +55,7 @@ const getMatchesOdds = async ($, res) => {
   try {
     return res.status(200).json({ length: matches.length, Matches: matches });
   } catch (error) {
-    return res.status(500).json({"Error sending results from betway": error });
+    return res.status(500).json({"Error fetching results from betway": error });
   }
 };
 

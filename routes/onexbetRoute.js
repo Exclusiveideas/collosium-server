@@ -12,7 +12,7 @@ const onexbetRoute = (req, res) => {
   rp(options)
     .then(async (data) => await getMatchesOdds(data?.Value, res))
     .catch((err) => {
-      return res.status(500).json({ "Error sending results from 1exbet": err });
+      return res.status(500).json({ "Error fetching results from 1exbet": err });
     });
 };
 
@@ -34,7 +34,7 @@ const getMatchesOdds = async (values, res) => {
   try {
     return res.status(200).json({ length: matches.length, Matches: matches });
   } catch (error) {
-    return res.status(500).json({ "Error sending results from 1xbet": error });
+    return res.status(500).json({ "Error fetching results from 1xbet": error });
   }
 };
 

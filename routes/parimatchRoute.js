@@ -57,7 +57,7 @@ const parimatchRoute = (req, res) => {
     .catch((err) => {
       return res
         .status(500)
-        .json({ "Error sending results from parimatch": err });
+        .json({ "Error fetching results from parimatch": err });
     });
 
   rp(options2)
@@ -67,7 +67,7 @@ const parimatchRoute = (req, res) => {
     .catch((err) => {
       return res
         .status(500)
-        .json({ "Error sending results from parimatch": err });
+        .json({ "Error fetching results from parimatch": err });
     });
 
   rp(options3)
@@ -77,7 +77,7 @@ const parimatchRoute = (req, res) => {
     .catch((err) => {
       return res
         .status(500)
-        .json({ "Error sending results from parimatch": err });
+        .json({ "Error fetching results from parimatch": err });
     });
 
   rp(options4)
@@ -87,7 +87,7 @@ const parimatchRoute = (req, res) => {
     .catch((err) => {
       return res
         .status(500)
-        .json({ "Error sending results from parimatch": err });
+        .json({ "Error fetching results from parimatch": err });
     });
 
   rp(options5)
@@ -97,7 +97,7 @@ const parimatchRoute = (req, res) => {
     .catch((err) => {
       return res
         .status(500)
-        .json({ "Error sending results from parimatch": err });
+        .json({ "Error fetching results from parimatch": err });
     });
 
   if (allMatches[0]) {
@@ -108,7 +108,7 @@ const parimatchRoute = (req, res) => {
     } catch (error) {
       return res
         .status(500)
-        .json({ "Error sending results from parimatch": error });
+        .json({ "Error fetching results from parimatch": error });
     }
   }
 };
