@@ -9,7 +9,7 @@ const options = {
   body: {
     order: 0,
     pageNum: 1,
-    pageSize: 40,
+    pageSize: 60,
     productId: 3,
     sportId: "sr:sport:1",
   },
